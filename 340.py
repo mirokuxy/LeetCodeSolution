@@ -1,6 +1,11 @@
 # 340. Longest Substring with At Most K Distinct Characters
 # https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/#/description
 
+# Solution:
+#  1) expand when possible
+#  2) shrink until it's expandable again
+#  3) repeate 1) 2) until reaches end of string (also when shrink doesn't happen)
+
 class Solution(object):
   def init(self, s, k):
     self.s = s
@@ -60,7 +65,6 @@ def main():
   k = int(raw_input().strip())
   print Solution().lengthOfLongestSubstringKDistinct(s,k)
 
-#if __name__ == "__main__":
 #  main()
 
 

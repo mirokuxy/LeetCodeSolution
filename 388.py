@@ -1,6 +1,9 @@
 # 388. Longest Absolute File Path
 # https://leetcode.com/problems/longest-absolute-file-path/#/description
 
+# Solution:
+#  Iterate through all files in order, record current length and update max_length
+
 # Notes:
 # 1) "\t\tdir".split("\t") -> [ '', '', 'dir' ]
 # 2) Since only the max "length" info is needed,
