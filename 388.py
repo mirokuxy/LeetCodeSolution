@@ -2,7 +2,10 @@
 # https://leetcode.com/problems/longest-absolute-file-path/#/description
 
 # Notes:
-# "\t\tdir".split("\t") -> [ '', '', 'dir' ]
+# 1) "\t\tdir".split("\t") -> [ '', '', 'dir' ]
+# 2) Since only the max "length" info is needed,
+#    there's no need to store the tree structure.
+#    Just need to calculate the needed info on the fly.
 
 class Solution(object):
   def lengthLongestPath(self, input):
