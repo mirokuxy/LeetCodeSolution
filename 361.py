@@ -16,6 +16,13 @@ Solution:
 Time Complexity:
   4 * M * N -> O(MN)
 
+Better Solution: 
+  https://discuss.leetcode.com/topic/48565/short-o-mn-solution
+  1) num of enemies reachable is the same for cells within a non-wall-streak
+  2) Use 2d sequential scanning, storing only the num of enemies reachable 
+      for current row, and for each col 
+  3) As a result, smaller space usage: O(n) 
+
 Personal Notes:
   *) Create 2D array:
       Wrong: matrix = [ [0] * n ] * m
@@ -53,23 +60,6 @@ class Solution(object):
             tot = 0
           elif grid[i][j] == 'E':
             tot += 1
-      """
-      tot = 0
-      for j in xrange(n-1, -1, -1):
-        row[i][j] += tot
-        if grid[i][j] == 'W':
-          tot = 0
-        elif grid[i][j] == 'E':
-          tot += 1
-
-      tot = 0
-      for j in xrange(0, n, 1):
-        row[i][j] += tot
-        if grid[i][j] == 'W':
-          tot = 0
-        elif grid[i][j] == 'E':
-          tot += 1
-      """
 
     for j in xrange(n):
       upwards = xrange(m-1, -1, -1)
@@ -82,24 +72,6 @@ class Solution(object):
             tot = 0
           elif grid[i][j] == 'E':
             tot += 1
-
-      """
-      tot = 0
-      for i in xrange(m-1, -1, -1):
-        col[i][j] += tot
-        if grid[i][j] == 'W':
-          tot = 0
-        elif grid[i][j] == 'E':
-          tot += 1
-
-      tot = 0
-      for i in xrange(0, m, 1):
-        col[i][j] += tot
-        if grid[i][j] == 'W':
-          tot = 0
-        elif grid[i][j] == 'E':
-          tot += 1
-      """
 
     max_count = 0
     for i in xrange(m):
