@@ -1,6 +1,13 @@
 # 394. Decode String
 # https://leetcode.com/problems/decode-string/#/description
 
+# Solution:
+#  Gets inspiration from Compiler Design.
+#  Construct string top-down. 
+#  1) Break string into parts/components
+#  2) Set syntax/semantic rules for each component.
+#  3) Read each component separately.
+
 import collections
 
 class Solution(object):
