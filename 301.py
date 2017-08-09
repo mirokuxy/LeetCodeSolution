@@ -31,7 +31,7 @@ class Solution(object):
     """
     ans = []
     par = [PAR[0], PAR[1]]
-    remvoe(s, 0, 0, par, ans)
+    remove(s, 0, 0, par, ans)
     return ans
 
       
