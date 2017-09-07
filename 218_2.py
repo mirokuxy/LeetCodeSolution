@@ -1,6 +1,5 @@
 from heapq import *
 
-
 class Solution(object):
   def getSkyline(self, LRH):
     """
@@ -23,7 +22,7 @@ class Solution(object):
           skyline.append([x, -HR[0][0]])
       while HR and (i == n or -HR[0][1] < LRH[i][0]):
         x = -HR[0][1]
-        while -HR[0][1] <= x:
+        while HR and -HR[0][1] <= x:
           heappop(HR)
         new_H = -HR[0][0] if HR else 0
         skyline.append([x, new_H])
